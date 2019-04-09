@@ -1,3 +1,8 @@
-**/Misc/
+.classpath
+**/extent-reports/
 **/ATU Reports/
 **/outfiles/
+**/screenshot/
+**/target/
+**/test-output/
+**/Misc/
