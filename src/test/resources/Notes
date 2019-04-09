@@ -1,0 +1,21 @@
+For ExtentReport V2.0
+=======================	
+		<dependency>
+    		 <groupId>com.relevantcodes</groupId>
+   			 <artifactId>extentreports</artifactId>
+   			 <version>2.41.2</version>
+		</dependency>
+		
+For ExtentReport V3.0
+=======================	
+		<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>3.1.5</version>
+		</dependency>
+		
+=======================	
+NewTest_ExtentReportV3.java -> Use Listener.class
+NewTest_ExtentReportV3Copy.java -> Use ListenerV3.class
+
+		

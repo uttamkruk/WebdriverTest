@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite" parallel="none" thread-count="0"> 
+<!-- <suite name="Suite" parallel="methods" thread-count="2"> --> 
+<!-- <suite name="Suite" parallel="classes" thread-count="2"> --> 
+<!-- <suite name="Gmail Suite" parallel="tests"  thread-count="1" verbose="1" annotations="JDK"> -->
+  <test name="Test">
+  <parameter name ="browser" value="chrome"/>
+    <classes>
+           <class name="testScript.NewTest_ExtentReportV3"/> 
+      <!-- <class name="testScript.NewTest_ExtentReportV3Copy"/> -->
+      <!-- <class name="testScript.NewTest_ATUReport"/> -->
+      <!-- <class name="retryFailedTestcase.RetryFailedTestcase"/> -->
+    </classes> 
+    
+<!--  <test name="Parallel Test"> -->
+<!--  <parameter name ="browser" value="firefox"/> -->
+<!--    <classes>
+      	   <class name="testScript.NewTest_ExtentReportV3"/>
+      	   <class name="testScript.NewTest_ExtentReport"/> 
+           <class name="testScript.NewTest_ATUReport"/>
+           <class name="retryFailedTestcase.RetryFailedTestcase"/> 
+           <class name="testScript.javaScriptExeMethod"/>
+    </classes> -->
+<!--  </test> -->
+
+<!--Include / Exclude mechanism to exclude the test case--> 
+<!-- <methods>		
+          <exclude name="testEasy" />	
+          <include name="captureScreenshot" />		
+      </methods> -->   
+      
+  	  <groups>		
+          <run>		
+    		 <include name="Title_verification"/>	
+    		 <exclude name="Screenshot"/>
+    		 <exclude name="Listeners"/>
+    		 <include name="My testing"/>
+          </run>		
+      </groups> 
+
+<!--Listeners mechanism to generate logs and customize TestNG Reports (either uncomment below or use it at code level)-->       
+<!-- <listeners>
+      		 <listener class-name="listeners.Listener"/>
+      </listeners> --> 
+   
+<!-- ATUReporter listeners --> 
+<!-- <listeners> 
+		<listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+		<listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+		<listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>		
+	 </listeners> -->
+	   
+   </test> 
+</suite> 
