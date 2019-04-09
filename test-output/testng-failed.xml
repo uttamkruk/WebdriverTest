@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [Grid Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="nodeUrl" value="http://192.168.246.113:5556/wd/hub"/>
+  <parameter name="platform" value="WIN10"/>
+  <test name="Grid-Win10(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="nodeUrl" value="http://192.168.246.113:5558/wd/hub"/>
+    <parameter name="platform" value="WIN10"/>
+    <groups>
+      <run>
+        <exclude name="Title_verification"/>
+        <exclude name="Screenshot"/>
+        <exclude name="Listeners"/>
+        <exclude name="My testing"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="gridTest.ParallelTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="googleSearch"/>
+          <include name="clickResLink"/>
+        </methods>
+      </class> <!-- gridTest.ParallelTest -->
+    </classes>
+  </test> <!-- Grid-Win10(failed) -->
+  <test name="Grid-Win10-clone(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="nodeUrl" value="http://192.168.246.113:5556/wd/hub"/>
+    <parameter name="platform" value="WIN10"/>
+    <groups>
+      <run>
+        <exclude name="Title_verification"/>
+        <exclude name="Screenshot"/>
+        <exclude name="Listeners"/>
+        <exclude name="My testing"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="gridTest.ParallelTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="googleSearch"/>
+          <include name="clickResLink"/>
+        </methods>
+      </class> <!-- gridTest.ParallelTest -->
+    </classes>
+  </test> <!-- Grid-Win10-clone(failed) -->
+</suite> <!-- Failed suite [Grid Suite] -->

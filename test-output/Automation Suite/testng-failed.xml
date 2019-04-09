@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="0" guice-stage="DEVELOPMENT" name="Failed suite [Automation Suite]" parallel="none">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test(failed)" parallel="none">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="My testing1"/>
+        <exclude name="Title_verification"/>
+        <exclude name="Phptravels.com"/>
+        <exclude name="Screenshot"/>
+        <exclude name="Listeners"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testScript.NewTest_ExtentReportV3">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="tearDown"/>
+          <include name="ListFilesUtilOperation"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- testScript.NewTest_ExtentReportV3 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Automation Suite] -->
