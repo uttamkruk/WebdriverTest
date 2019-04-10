@@ -2,7 +2,7 @@ Echo off
 Title FirefoxDriver NODE on port 5556
 
 Echo Setting Project Location for Node
-set projectLocation=C:\Testing\WebdriverTest
+set projectLocation=C:\Testing\WebdriverTesting
 pushd %projectLocation%
 
 Echo Setting FirefoxDriver Path and Create node on port 5556

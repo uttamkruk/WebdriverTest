@@ -2,7 +2,7 @@ Echo off
 Title Server HUB on port 4444
 
 Echo Setting Project Location
-set projectLocation=C:\Testing\WebdriverTest
+set projectLocation=C:\Testing\WebdriverTesting
 pushd %projectLocation%
 
 Echo Loading HUB on default port 4444
