@@ -180,9 +180,9 @@ public class NewTest_ExtentReportV3{
 		
 		// Capture the Particular WebElement Image
 		WebElement element = driver.findElement(By.cssSelector("#hplogo"));
-		CaptureScreenshot.getScreenshot(driver, element);
-		System.out.println("WebElement is captured successfully..");
-		logger.log(Status.PASS, "WebElement is captured successfully...");
+		//CaptureScreenshot.getScreenshot(driver, element);
+		//System.out.println("WebElement is captured successfully..");
+		//logger.log(Status.PASS, "WebElement is captured successfully...");
 
 		String title = driver.getTitle();		
 		Assert.assertTrue(title.contains("Google"));	
