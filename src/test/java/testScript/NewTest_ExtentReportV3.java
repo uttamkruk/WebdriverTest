@@ -2,17 +2,11 @@ package testScript;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -20,9 +14,7 @@ import java.util.zip.ZipInputStream;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,23 +24,13 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 /*import retryFailedTestcase.RetryFailedTestcase;
 import utility.CaptureScreenshot;
@@ -65,14 +47,10 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
-
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
-/*import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;*/
-//import Flash.FlashObjectWebDriver;
-import listeners.ListenerV3;
+
 
 
 @Listeners(listeners.Listener.class)
@@ -83,13 +61,12 @@ public class NewTest_ExtentReportV3{
 	ExtentReports report;
 	ExtentTest logger;
 	WebDriver driver;
-	//ATUTestRecorder recorder;
+	
 	
 	@Parameters("browser")
 	@BeforeTest(alwaysRun = true)
 	
 	public void beforeTest(String browser) throws MalformedURLException {
-	//public void beforeTest(String browser) throws MalformedURLException, ATUTestRecorderException {	
 		
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss").format(new java.util.Date());
 		//ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "\\extent-reports\\Reports_"+timeStamp+".html");
@@ -108,11 +85,6 @@ public class NewTest_ExtentReportV3{
 		report.setSystemInfo("Environment", "Verification01");
 		report.setSystemInfo("Build","10.0.120.46");
 		report.setSystemInfo("User Name","Uttam Kumar");
-		
-		/*// Record ececution video
-		String execRecording = "TestExecution Recording_"+timeStamp ;
-		recorder = new ATUTestRecorder(System.getProperty("user.dir")+"/Misc/scriptRecorder", execRecording , false);
-		recorder.start();*/
 		
         
 		if(browser.equalsIgnoreCase("firefox")) {
@@ -253,94 +225,7 @@ public class NewTest_ExtentReportV3{
 	  }*/
 	 
 	
-	 @Test (priority = 7, enabled = false)
-	 public void javaScriptExeMethod() throws InterruptedException{
-		 
-	 logger = report.createTest("Verify javaScriptExecutor functionality").assignCategory("Selenium").assignAuthor("UK");
-	 logger.log(Status.INFO, "javaScriptExecutor functionality Started ...");	 
-	 driver.get("https://www.gmail.com");
-	 //WebElement loginButton = driver.findElement(By.xpath("//*[@id='next']"));
-	 
-	 /*Syntax:
-	 JavascriptExecutor js = (JavascriptExecutor) driver;  
-	 js.executeScript(Script,Arguments);
-	 script - The JavaScript to execute
-	 Arguments - The arguments to the script.(Optional)*/
-	 
-               JavascriptExecutor js = (JavascriptExecutor)driver;
-               //Uncomment each scenario by using Ctrl + Shift + \ (backslash) and find the solution
 
-               //to type text in Selenium WebDriver without using sendKeys() method
-               //js.executeScript("document.getElementById('value of Id in DOM').value='someValue';");
-               js.executeScript("document.getElementById('identifierId').value='uttamkr.uk@gmail.com';");
-               
-               //WebElement nextButton = driver.findElement(By.xpath("//*[@id='identifierNext']/content/span"));
-               //to click a button in Selenium WebDriver using JavaScript
-               //js.executeAsyncScript("arguments[0].click();", nextButton);
-               /*//or
-               js.executeScript("document.getElementById('enter your element id').click();");
-               js.executeScript("document.getElementById('next').click();");*/
-
-               /*//to handle checkbox
-               js.executeScript("document.getElementById('enter element id').checked=false;");*/
-                              
-	 
-				 //to generate Alert Pop window in selenium
-				 //js.executeScript("alert('hello world');");
-				 
-				 /*//to refresh browser window using Javascript 
-				 js.executeScript("history.go(0)");*/
-				 
-				 /*// to get innertext of the entire webpage in Selenium
-				 String sText =  js.executeScript("return document.documentElement.innerText;").toString();
-				 System.out.println(sText);*/
-				 
-				 /*//to get the Title of our webpage
-				 String sText =  js.executeScript("return document.title;").toString();
-				 System.out.println(sText);*/
-				 
-				 /*//to get the domain
-				 String sText =  js.executeScript("return document.domain;").toString();
-				 System.out.println(sText);*/
-				 
-				 /*//to get the URL of our webpage
-				 String sText =  js.executeScript("return document.URL;").toString();
-				 System.out.println(sText);*/
-				 
-				 /*//to perform Scroll on application using  Selenium
-				 //Vertical scroll - down by 50  pixels
-				 js.executeScript("window.scrollBy(0,50)");
-				 // for scrolling till the bottom of the page we can use the code like
-				 //js.executeScript("window.scrollBy(0,document.body.scrollHeight)");*/
-				 
-				 /* // to click on a SubMenu which is only visible on mouse hover on Menu?
-				 //Hover on Automation Menu on the MenuBar
-				         js.executeScript("$('ul.menus.menu-secondary.sf-js-enabled.sub-menu li').hover()");*/
-				 
-				 /*//to navigate to different page using Javascript?
-				         //Navigate to new Page
-				         js.executeScript("window.location = 'https://www.softwaretestingmaterial.com");*/
-               
-              /*// Get Attribute | Text -->  OUTPUT | content
-               driver.get("http://google.co.in/");
-               Object exampleDiv = ((JavascriptExecutor) driver).executeScript("return document.getElementById('main');");
-               String name = ((WebElement) exampleDiv).getAttribute("class");
-               System.out.println(name);
-               
-              // Last Modified --> OUTPUT |  lastModified  : 01/29/2014 14:56:46
-               driver.get("http://google.co.in/");
-               js = (JavascriptExecutor) driver;
-               String lastModified = (String) js.executeScript("return document.lastModified");
-               System.out.println("lastModified  : " + lastModified);
-               
-              // Ready state --> OUTPUT | readyState  : complete
-               driver.get("http://google.co.in/");
-               js = (JavascriptExecutor) driver;
-               String readyState = (String) js.executeScript("return document.readyState");
-               System.out.println("readyState  : " + readyState);*/
-               
-	 }
-	
 	
 	 @Test (groups = { "My testing1" } ,priority = 8, enabled = true)
 	 public void brokenLinks() {
@@ -524,7 +409,7 @@ public class NewTest_ExtentReportV3{
 			System.out.println("Could not send email..");
 		} finally {
 			driver.quit();
-			//recorder.stop();
+			
 		}
 	}
 
