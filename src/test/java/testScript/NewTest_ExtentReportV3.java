@@ -120,6 +120,7 @@ public class NewTest_ExtentReportV3{
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
+			options.addArguments("--disable-gpu");
 			/*// for headless browser
 			options.addArguments("window-size=1400,800","headless");*/
 			driver = new ChromeDriver(options);
