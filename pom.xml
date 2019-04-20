@@ -93,7 +93,8 @@
              <configuration>
              <testFailureIgnore>false</testFailureIgnore> <!-- Set true - Build success even if testcase is failing -->
               	<suiteXmlFiles>
-              	  <suiteXmlFiles>testng.xml</suiteXmlFiles>    
+              	  <suiteXmlFiles>testng.xml</suiteXmlFiles>
+              <!--<suiteXmlFiles>target/surefire-reports/testng-failed.xml</suiteXmlFiles>-->
 			  <!--<suiteXmlFiles>${suiteXmlFile}</suiteXmlFiles>-->  				  
                 </suiteXmlFiles>
              </configuration>        
